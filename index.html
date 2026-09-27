@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260925-05-46ec85d","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/6542d56fbfe7a3eb.telemetry_sdk.js" integrity="sha512-ECdM0nK7EkwDuOqho2qxgyRQXyBHk9hZqRKMBr+Xsu6zjeHlt+qkO2N2YRiHN7Kg4e1fEHDhjIp4bGJYVypv1g=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gim Tajwid Interaktif</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/10f6beec21a1ad37.element_sdk.js" integrity="sha512-YaX5kozeJyVhyB0OpNRElv0/V2DF7Zpm5GJWBFYWqJQKNtDPyO2t6vy0nxWmlvleVjfaIs3ui37yytaGt4z07w=="></script>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&amp;family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+  html, body { height: 100%; margin: 0; }
+  * { font-family: 'Baloo 2', cursive; }
+  .arabic { font-family: 'Amiri', serif; direction: rtl; }
+
+  @keyframes floatIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes pop { 0%,100%{transform:scale(1)} 50%{transform:scale(1.15)} }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-8px)} 75%{transform:translateX(8px)} }
+  @keyframes starBurst { 0%{opacity:1;transform:scale(0)} 50%{opacity:1;transform:scale(1.3)} 100%{opacity:0;transform:scale(0.5)} }
+  @keyframes confettiFall { 0%{transform:translateY(-10px) rotate(0deg);opacity:1} 100%{transform:translateY(60px) rotate(360deg);opacity:0} }
+  @keyframes bounceIn { 0%{transform:scale(0)} 60%{transform:scale(1.1)} 100%{transform:scale(1)} }
+  @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4)} 50%{box-shadow:0 0 0 12px rgba(34,197,94,0)} }
+
+  .float-in { animation: floatIn 0.4s ease-out both; }
+  .pop { animation: pop 0.35s ease; }
+  .shake { animation: shake 0.4s ease; }
+  .star-burst { animation: starBurst 0.6s ease-out both; }
+  .bounce-in { animation: bounceIn 0.4s ease-out both; }
+
+  .card-glow { transition: all 0.2s; }
+  .card-glow:hover { transform: translateY(-3px); }
+  .card-glow.selected { animation: pulse 1.5s infinite; }
+
+  .confetti-piece {
+    position: absolute;
+    width: 8px; height: 8px;
+    border-radius: 2px;
+    animation: confettiFall 1.2s ease-out both;
+  }
+
+  .pattern-bg {
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255,215,0,0.06) 0%, transparent 40%);
+  }
+
+  .badge { display:inline-flex; align-items:center; gap:4px; padding:2px 10px; border-radius:9999px; font-size:0.75rem; font-weight:700; }
+</style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/6c2ecc939521f244.data_sdk.js" type="text/javascript" integrity="sha512-gRx8s+XsZDN6mSIQu2sivLZysbV0WHhb5kXNUWlgVb5lCMU1foJYukyMEDPv8Tnoocb8iwqB4XdRrWc7oEGzIQ=="></script>
+ </head>
+ <body class="h-full overflow-auto">
+  <div id="app" class="h-full w-full pattern-bg" style="background: linear-gradient(135deg, #0d4a3e 0%, #1a6b54 30%, #0f5a47 60%, #0a3d33 100%);">
+   <!-- SPLASH SCREEN -->
+   <div id="splash-screen" class="h-full flex flex-col items-center justify-center p-6 text-center">
+    <div class="float-in" style="animation-delay:0.1s">
+     <div class="text-7xl mb-4">
+      🕌
+     </div>
+    </div>
+    <h1 id="main-title" class="float-in text-3xl md:text-5xl font-extrabold text-white mb-2 drop-shadow-lg" style="animation-delay:0.2s">Gim Tajwid Interaktif</h1>
+    <p id="main-subtitle" class="float-in text-lg md:text-xl text-emerald-200 mb-6 font-medium" style="animation-delay:0.3s">Nun Mati &amp; Tanwin 📖</p><!-- Info Cards -->
+    <div class="float-in grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg w-full mb-8" style="animation-delay:0.4s">
+     <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/20">
+      <div class="text-2xl mb-1">
+       🎯
+      </div>
+      <p class="text-emerald-100 text-sm font-medium">Cocokkan hukum tajwid dengan contoh bacaan</p>
+     </div>
+     <div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/20">
+      <div class="text-2xl mb-1">
+       ⭐
+      </div>
+      <p class="text-emerald-100 text-sm font-medium">Kumpulkan bintang sebanyak-banyaknya!</p>
+     </div>
+    </div><!-- Hukum Legend -->
+    <div class="float-in bg-white/10 backdrop-blur rounded-2xl p-4 max-w-lg w-full mb-8 border border-white/20" style="animation-delay:0.5s">
+     <p class="text-yellow-300 font-bold text-sm mb-3">📚 5 Hukum Nun Mati &amp; Tanwin:</p>
+     <div class="flex flex-wrap justify-center gap-2">
+      <span class="badge bg-rose-500/80 text-white">إظهار Idzhar</span> <span class="badge bg-blue-500/80 text-white">إدغام Idgham</span> <span class="badge bg-amber-500/80 text-white">إقلاب Iqlab</span> <span class="badge bg-purple-500/80 text-white">إخفاء Ikhfa</span> <span class="badge bg-teal-500/80 text-white">إدغام مثلين Idgham Mitsli</span>
+     </div>
+    </div><button onclick="startGame()" class="float-in bg-yellow-400 hover:bg-yellow-300 text-emerald-900 font-extrabold text-xl px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95" style="animation-delay:0.6s"> Mulai Bermain! 🚀 </button>
+   </div><!-- GAME SCREEN -->
+   <div id="game-screen" class="h-full flex flex-col p-3 md:p-5" style="display:none">
+    <!-- Top Bar -->
+    <header class="flex items-center justify-between mb-3 flex-shrink-0"><button onclick="exitGame()" class="bg-red-500/80 hover:bg-red-400 text-white font-bold px-3 py-1.5 rounded-full text-xs shadow transition-all active:scale-95">✕ Keluar</button>
+     <div class="flex items-center gap-3">
+      <span id="stars-display" class="bg-yellow-400/90 text-emerald-900 font-extrabold px-4 py-1.5 rounded-full text-sm shadow">⭐ 0</span> <span id="streak-display" class="bg-orange-400/90 text-white font-bold px-3 py-1.5 rounded-full text-xs shadow" style="display:none">🔥 0</span>
+     </div><span id="progress-text" class="text-emerald-200 text-sm font-bold">1 / 10</span>
+    </header><!-- Progress Bar -->
+    <div class="w-full bg-white/15 rounded-full h-2.5 mb-4 flex-shrink-0 overflow-hidden">
+     <div id="progress-bar" class="h-full rounded-full transition-all duration-500 ease-out" style="width:10%; background: linear-gradient(90deg, #fbbf24, #f59e0b);"></div>
+    </div><!-- Question Area -->
+    <div id="question-area" class="flex-1 flex flex-col items-center justify-center gap-4">
+     <!-- Hint -->
+     <div id="hint-box" class="bg-white/10 backdrop-blur rounded-xl px-4 py-2 border border-white/20 max-w-md text-center">
+      <p id="hint-text" class="text-emerald-200 text-xs md:text-sm"></p>
+     </div><!-- Arabic Example Card -->
+     <div id="example-card" class="bg-white rounded-3xl shadow-2xl px-6 py-5 md:px-10 md:py-7 max-w-sm w-full text-center card-glow">
+      <p id="example-label" class="text-emerald-600 text-xs font-bold mb-2 uppercase tracking-wider">Contoh Bacaan</p>
+      <p id="example-arabic" class="arabic text-3xl md:text-4xl text-gray-800 leading-relaxed mb-2"></p>
+      <p id="example-latin" class="text-gray-400 text-sm italic"></p>
+     </div><!-- Answer Buttons -->
+     <div id="answers-container" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-w-lg w-full mt-2"></div><!-- Feedback -->
+     <div id="feedback" class="text-center min-h-[48px] flex flex-col items-center justify-center relative">
+      <p id="feedback-text" class="font-bold text-lg"></p>
+      <p id="feedback-detail" class="text-xs text-emerald-200 mt-1"></p>
+     </div>
+    </div>
+   </div><!-- RESULT SCREEN -->
+   <div id="result-screen" class="h-full flex flex-col items-center justify-center p-6 text-center" style="display:none">
+    <div id="result-content"></div>
+   </div>
+  </div>
+  <script>
+// === GAME DATA ===
+const questions = [
+  { arabic:"مِنْ خَيْرٍ", latin:"min khairin", answer:"Idzhar", hukum:"إظهار", hint:"Nun mati (نْ) bertemu huruf halqi (خ) → dibaca jelas", huruf:"خ adalah huruf halqi (tenggorokan)" },
+  { arabic:"مَنْ عَمِلَ", latin:"man 'amila", answer:"Idzhar", hukum:"إظهار", hint:"Nun mati (نْ) bertemu huruf halqi (ع) → dibaca jelas", huruf:"ع adalah huruf halqi" },
+  { arabic:"مِنْ وَلِيٍّ", latin:"min waliyyin", answer:"Idgham", hukum:"إدغام", hint:"Nun mati (نْ) bertemu و → dilebur dengan ghunnah", huruf:"و termasuk huruf Idgham (يرملون)" },
+  { arabic:"مِنْ نِعْمَةٍ", latin:"min ni'matin", answer:"Idgham Mitsli", hukum:"إدغام مثلين", hint:"Nun mati (نْ) bertemu ن → dua huruf sama dilebur", huruf:"نْ bertemu ن = huruf yang sama" },
+  { arabic:"مِنْ بَعْدِ", latin:"min ba'di", answer:"Iqlab", hukum:"إقلاب", hint:"Nun mati (نْ) bertemu ب → berubah jadi mim (م)", huruf:"ب adalah satu-satunya huruf Iqlab" },
+  { arabic:"أَنْبِئْهُمْ", latin:"anbi'hum", answer:"Iqlab", hukum:"إقلاب", hint:"Nun mati (نْ) bertemu ب → bunyi berubah jadi م", huruf:"Ingat: نْ + ب = Iqlab!" },
+  { arabic:"مِنْ شَرِّ", latin:"min syarri", answer:"Ikhfa", hukum:"إخفاء", hint:"Nun mati (نْ) bertemu ش → dibaca samar (dengung)", huruf:"ش termasuk 15 huruf Ikhfa" },
+  { arabic:"مَنْ ذَا", latin:"man dzaa", answer:"Ikhfa", hukum:"إخفاء", hint:"Nun mati (نْ) bertemu ذ → dibaca samar dengan dengung", huruf:"ذ termasuk huruf Ikhfa" },
+  { arabic:"عَلِيمٌ رَحِيمٌ", latin:"'aliimun rahiim", answer:"Idgham", hukum:"إدغام", hint:"Tanwin (ـٌ) bertemu ر → dilebur tanpa ghunnah", huruf:"ر termasuk huruf Idgham (يرملون)" },
+  { arabic:"مِنْ كُلٍّ", latin:"min kullin", answer:"Ikhfa", hukum:"إخفاء", hint:"Nun mati (نْ) bertemu ك → dibaca samar", huruf:"ك termasuk 15 huruf Ikhfa" }
+];
+
+const answerColors = {
+  "Idzhar": { bg:"bg-rose-500 hover:bg-rose-400", ring:"ring-rose-300" },
+  "Idgham": { bg:"bg-blue-500 hover:bg-blue-400", ring:"ring-blue-300" },
+  "Iqlab": { bg:"bg-amber-500 hover:bg-amber-400", ring:"ring-amber-300" },
+  "Ikhfa": { bg:"bg-purple-500 hover:bg-purple-400", ring:"ring-purple-300" },
+  "Idgham Mitsli": { bg:"bg-teal-500 hover:bg-teal-400", ring:"ring-teal-300" }
+};
+
+const answerEmojis = { "Idzhar":"🔊", "Idgham":"🔄", "Iqlab":"🔀", "Ikhfa":"🤫", "Idgham Mitsli":"🔁" };
+
+let currentQ = 0, stars = 0, streak = 0, answered = false, shuffled = [];
+
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+
+function startGame() {
+  currentQ = 0; stars = 0; streak = 0;
+  shuffled = shuffleArray(questions);
+  document.getElementById('splash-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'none';
+  document.getElementById('game-screen').style.display = 'flex';
+  showQuestion();
+}
+
+function exitGame() {
+  // Reset game state and show confirmation inline
+  currentQ = 0; stars = 0; streak = 0; answered = false;
+  document.getElementById('game-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'none';
+  document.getElementById('splash-screen').style.display = 'flex';
+}
+
+function showQuestion() {
+  answered = false;
+  const q = shuffled[currentQ];
+  document.getElementById('progress-text').textContent = `${currentQ + 1} / ${shuffled.length}`;
+  document.getElementById('progress-bar').style.width = `${((currentQ + 1) / shuffled.length) * 100}%`;
+  document.getElementById('stars-display').textContent = `⭐ ${stars}`;
+  document.getElementById('hint-text').textContent = `💡 ${q.hint}`;
+  document.getElementById('example-arabic').textContent = q.arabic;
+  document.getElementById('example-latin').textContent = q.latin;
+  document.getElementById('feedback-text').textContent = '';
+  document.getElementById('feedback-detail').textContent = '';
+
+  const streakEl = document.getElementById('streak-display');
+  if (streak >= 2) { streakEl.style.display = ''; streakEl.textContent = `🔥 ${streak}`; }
+  else { streakEl.style.display = 'none'; }
+
+  // Build answer buttons — get unique answer set for this question
+  const container = document.getElementById('answers-container');
+  container.innerHTML = '';
+  const options = getOptions(q.answer);
+  options.forEach((opt, i) => {
+    const c = answerColors[opt];
+    const btn = document.createElement('button');
+    btn.className = `${c.bg} text-white font-bold py-3 px-4 rounded-2xl shadow-lg transition-all active:scale-95 card-glow float-in text-sm md:text-base`;
+    btn.style.animationDelay = `${i * 0.07}s`;
+    btn.innerHTML = `${answerEmojis[opt]} ${opt}`;
+    btn.onclick = () => checkAnswer(opt, btn);
+    container.appendChild(btn);
+  });
+
+  // Animate card
+  const card = document.getElementById('example-card');
+  card.classList.remove('bounce-in');
+  void card.offsetWidth;
+  card.classList.add('bounce-in');
+}
+
+function getOptions(correct) {
+  const all = Object.keys(answerColors);
+  const others = shuffleArray(all.filter(a => a !== correct)).slice(0, 3);
+  return shuffleArray([correct, ...others]);
+}
+
+function checkAnswer(choice, btn) {
+  if (answered) return;
+  answered = true;
+  const q = shuffled[currentQ];
+  const isCorrect = choice === q.answer;
+  const allBtns = document.querySelectorAll('#answers-container button');
+
+  if (isCorrect) {
+    const earned = streak >= 2 ? 2 : 1;
+    stars += earned;
+    streak++;
+    btn.classList.add('pop');
+    btn.classList.add('ring-4', answerColors[choice].ring);
+    document.getElementById('feedback-text').innerHTML = `<span class="text-yellow-300">${earned > 1 ? '🌟🌟 Kombo! +2' : '⭐ Benar! +1'} Bintang</span>`;
+    document.getElementById('feedback-detail').textContent = `${q.hukum} — ${q.huruf}`;
+    spawnConfetti(btn);
+    // Dim wrong buttons
+    allBtns.forEach(b => { if (b !== btn) b.classList.add('opacity-30'); });
+  } else {
+    streak = 0;
+    btn.classList.add('shake', 'opacity-50');
+    // Highlight correct
+    allBtns.forEach(b => {
+      if (b.textContent.includes(q.answer)) {
+        b.classList.add('ring-4', answerColors[q.answer].ring, 'pop');
+      } else if (b !== btn) {
+        b.classList.add('opacity-30');
+      }
+    });
+    document.getElementById('feedback-text').innerHTML = `<span class="text-rose-300">Belum tepat 😊</span>`;
+    document.getElementById('feedback-detail').textContent = `Jawaban: ${q.answer} (${q.hukum}) — ${q.huruf}`;
+  }
+
+  document.getElementById('stars-display').textContent = `⭐ ${stars}`;
+  const streakEl = document.getElementById('streak-display');
+  if (streak >= 2) { streakEl.style.display = ''; streakEl.textContent = `🔥 ${streak}`; }
+  else { streakEl.style.display = 'none'; }
+
+  setTimeout(() => {
+    currentQ++;
+    if (currentQ < shuffled.length) showQuestion();
+    else showResult();
+  }, 1800);
+}
+
+function spawnConfetti(target) {
+  const rect = target.getBoundingClientRect();
+  const colors = ['#fbbf24','#34d399','#f472b6','#60a5fa','#a78bfa'];
+  for (let i = 0; i < 10; i++) {
+    const p = document.createElement('div');
+    p.className = 'confetti-piece';
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.left = `${rect.left + rect.width / 2 + (Math.random() - 0.5) * 60}px`;
+    p.style.top = `${rect.top}px`;
+    p.style.animationDelay = `${Math.random() * 0.3}s`;
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 1500);
+  }
+}
+
+function showResult() {
+  document.getElementById('game-screen').style.display = 'none';
+  const rs = document.getElementById('result-screen');
+  rs.style.display = 'flex';
+  const pct = Math.round((stars / (shuffled.length * 2)) * 100);
+  let emoji, msg, grade;
+  if (stars >= 15) { emoji = '🏆'; msg = 'Luar Biasa! Kamu Ahli Tajwid!'; grade = 'Mumtaz (Sempurna)'; }
+  else if (stars >= 10) { emoji = '🌟'; msg = 'Hebat Sekali!'; grade = 'Jayyid Jiddan (Sangat Baik)'; }
+  else if (stars >= 6) { emoji = '👍'; msg = 'Bagus! Terus Berlatih!'; grade = 'Jayyid (Baik)'; }
+  else { emoji = '💪'; msg = 'Semangat! Coba Lagi Ya!'; grade = 'Maqbul (Cukup)'; }
+
+  document.getElementById('result-content').innerHTML = `
+    <div class="float-in text-7xl mb-4">${emoji}</div>
+    <h2 class="float-in text-3xl md:text-4xl font-extrabold text-white mb-2" style="animation-delay:0.1s">${msg}</h2>
+    <p class="float-in text-emerald-200 text-lg mb-6" style="animation-delay:0.2s">${grade}</p>
+    <div class="float-in bg-white/15 backdrop-blur rounded-2xl p-6 max-w-xs mx-auto mb-8 border border-white/20" style="animation-delay:0.3s">
+      <p class="text-yellow-300 text-4xl font-extrabold mb-1">⭐ ${stars}</p>
+      <p class="text-emerald-200 text-sm">dari ${shuffled.length} soal</p>
+    </div>
+    <button onclick="startGame()" class="float-in bg-yellow-400 hover:bg-yellow-300 text-emerald-900 font-extrabold text-lg px-8 py-3 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all" style="animation-delay:0.4s">
+      Main Lagi! 🔄
+    </button>
+  `;
+}
+
+// === ELEMENT SDK ===
+const defaultConfig = {
+  game_title: "Gim Tajwid Interaktif",
+  subtitle_text: "Nun Mati & Tanwin 📖",
+  background_color: "#0d4a3e",
+  surface_color: "#ffffff",
+  text_color: "#065f46",
+  accent_color: "#fbbf24",
+  secondary_action_color: "#34d399",
+  font_family: "Baloo 2",
+  font_size: 16
+};
+
+function applyConfig(config) {
+  const t = config.game_title || defaultConfig.game_title;
+  const s = config.subtitle_text || defaultConfig.subtitle_text;
+  const bg = config.background_color || defaultConfig.background_color;
+  const surface = config.surface_color || defaultConfig.surface_color;
+  const txt = config.text_color || defaultConfig.text_color;
+  const accent = config.accent_color || defaultConfig.accent_color;
+  const sec = config.secondary_action_color || defaultConfig.secondary_action_color;
+  const ff = config.font_family || defaultConfig.font_family;
+  const fs = config.font_size || defaultConfig.font_size;
+
+  const el = (id) => document.getElementById(id);
+  if (el('main-title')) el('main-title').textContent = t;
+  if (el('main-subtitle')) el('main-subtitle').textContent = s;
+
+  // Background
+  document.getElementById('app').style.background = `linear-gradient(135deg, ${bg} 0%, ${lighten(bg, 15)} 50%, ${bg} 100%)`;
+
+  // Surface color on cards
+  const exCard = el('example-card');
+  if (exCard) exCard.style.backgroundColor = surface;
+
+  // Text color
+  if (el('example-label')) el('example-label').style.color = txt;
+
+  // Accent on buttons & stars
+  document.querySelectorAll('.bg-yellow-400').forEach(b => { b.style.backgroundColor = accent; });
+
+  // Font
+  const fontStack = `${ff}, 'Baloo 2', cursive`;
+  document.body.style.fontFamily = fontStack;
+  document.querySelectorAll('h1,h2,p,button,span').forEach(e => {
+    if (!e.classList.contains('arabic')) e.style.fontFamily = fontStack;
+  });
+
+  // Font size scaling
+  if (el('main-title')) el('main-title').style.fontSize = `${fs * 2.2}px`;
+  if (el('main-subtitle')) el('main-subtitle').style.fontSize = `${fs * 1.2}px`;
+}
+
+function lighten(hex, pct) {
+  let r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  r = Math.min(255, r + Math.round((255-r)*pct/100));
+  g = Math.min(255, g + Math.round((255-g)*pct/100));
+  b = Math.min(255, b + Math.round((255-b)*pct/100));
+  return `#${r.toString(16).padStart(2,'0')}${g.toString(16).padStart(2,'0')}${b.toString(16).padStart(2,'0')}`;
+}
+
+window.elementSdk.init({
+  defaultConfig,
+  onConfigChange: async (config) => applyConfig(config),
+  mapToCapabilities: (config) => ({
+    recolorables: [
+      { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+      { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+      { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+      { get: () => config.accent_color || defaultConfig.accent_color, set: (v) => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); } },
+      { get: () => config.secondary_action_color || defaultConfig.secondary_action_color, set: (v) => { config.secondary_action_color = v; window.elementSdk.setConfig({ secondary_action_color: v }); } },
+    ],
+    borderables: [],
+    fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
+    fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } },
+  }),
+  mapToEditPanelValues: (config) => new Map([
+    ["game_title", config.game_title || defaultConfig.game_title],
+    ["subtitle_text", config.subtitle_text || defaultConfig.subtitle_text],
+  ])
+});
+</script>
+ </body>
+</html>
